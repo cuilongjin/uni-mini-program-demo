@@ -21,7 +21,10 @@
     "dev:mp-qq": "cross-env NODE_ENV=development UNI_PLATFORM=mp-qq vue-cli-service uni-build --watch",
     "dev:mp-toutiao": "cross-env NODE_ENV=development UNI_PLATFORM=mp-toutiao vue-cli-service uni-build --watch",
     "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
-    "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js"
+    "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
+
+    "dev:h5-weixin": "npm run dev:custom h5-weixin ",
+    "build:h5-weixin": "npm run build:custom h5-weixin"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "*",
@@ -53,12 +56,22 @@
     "postcss-comment": "^2.0.0",
     "vue-template-compiler": "^2.6.10"
   },
-  "browserslist": [
-    "last 3 versions",
-    "Android >= 4.4",
-    "ios >= 8"
-  ],
+  "browserslist": ["last 3 versions", "Android >= 4.4", "ios >= 8"],
+
+  "//": "扩展配置",
   "uni-app": {
-    "scripts": {}
+    "scripts": {
+      "h5-weixin": {
+        "//": "自定义微信服务号平台（H5-WEIXIN）",
+        "title": "微信服务号",
+        "BROWSER": "Chrome",
+        "env": {
+          "UNI_PLATFORM": "h5"
+        },
+        "define": {
+          "H5-WEIXIN": true
+        }
+      }
+    }
   }
 }

@@ -1,75 +1,136 @@
+/**
+ * 应用的配置文件，用于指定应用的名称、图标、权限等
+ * https://uniapp.dcloud.io/collocation/manifest
+ */
 {
-	"name": "",
-	"appid": "",
-	"description": "",
-	"versionName": "1.0.0",
-	"versionCode": "100",
-	"transformPx": false,
-	"app-plus": { /* 5+App特有相关 */
-		"usingComponents": true,
-		"splashscreen": {
-			"alwaysShowBeforeRender": true,
-			"waiting": true,
-			"autoclose": true,
-			"delay": 0
-		},
-		"modules": { /* 模块配置 */
+  "name": "",
+  "appid": "",
+  "description": "",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false, // 是否转换项目的px，为true时将px转换为rpx，为false时，px为传统的实际像素
+  // 网络超时时间
+  "networkTimeout": {
+    "request": 10000 // 默认 6000ms uni.request 的超时时间
+  },
+  "debug": false, // 默认 false 是否开启 debug 模式，开启后调试信息以 info 的形式给出，其信息有页面的注册，页面路由，数据更新，事件触发等
 
-		},
-		"distribute": { /* 应用发布信息 */
-			"android": { /* android打包配置 */
-				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
-					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
-					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
-					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.CAMERA\"/>",
-					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
-					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
-					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
-					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
-					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
-					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-					"<uses-feature android:name=\"android.hardware.camera\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-				]
-			},
-			"ios": { /* ios打包配置 */
-
-			},
-			"sdkConfigs": { /* SDK配置 */
-
-			}
-		}
-	},
-	"quickapp": { /* 快应用特有相关 */
-
-	},
-	"mp-weixin": { /* 微信小程序特有相关 */
-		"appid": "",
-		"setting": {
-			"urlCheck": false
-		},
-		"usingComponents": true
-	},
-	"mp-alipay" : {
-        "usingComponents" : true
+  /* 5+App特有相关 */
+  "app-plus": {
+    "usingComponents": true,
+    "splashscreen": {
+      "alwaysShowBeforeRender": true,
+      "waiting": true,
+      "autoclose": true,
+      "delay": 0
     },
-    "mp-baidu" : {
-        "usingComponents" : true
+    "modules": {
+      /* 模块配置 */
     },
-    "mp-toutiao" : {
-        "usingComponents" : true
-    },
-    "mp-qq" : {
-        "usingComponents" : true
+    "distribute": {
+      /* 应用发布信息 */
+      "android": {
+        /* android打包配置 */
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+          "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+          "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+          "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+          "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+          "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+          "<uses-feature android:name=\"android.hardware.camera\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+        ]
+      },
+      "ios": {
+        /* ios打包配置 */
+      },
+      "sdkConfigs": {
+        /* SDK配置 */
+      }
     }
+  },
+
+  /* 快应用特有相关 */
+  "quickapp": {},
+
+  /* h5 配置 */
+  /* https://uniapp.dcloud.io/collocation/manifest?id=h5 */
+  "h5": {
+    "title": "h5应用", // 页面标题
+    "template": "/public/index.html", // 模板路径
+    "router": {
+      "mode": "hash", // 路由模式 默认 hash， 支持 hash history
+      "base": "/" // 默认 /
+    },
+    "async": {
+      "loading": "", // 页面 js 加载时使用的组件（需注册为全局组件） 默认 AsyncLoading
+      "error": "", // 页面 js 加载失败时使用的组件（需注册为全局组件） 默认 AsyncError
+      "delay": 200, // 展示 loading 加载组件的延时时间（页面 js 若在 delay 时间内加载完成，则不会显示 loading 组件）
+      "timeout": 3000 // 页面 js 加载超时时间（超时后展示 error 对应的组件） 默认 3000
+    },
+    "devServer": {}, // 开发环境 server 配置
+
+    "publicPath": "", // 引用资源的地址前缀，仅发布时生效
+    // SDK配置，例如地图...
+    "sdkConfigs": {
+      "maps": {
+        "qqmap": {
+          // 腾讯地图秘钥（key）
+          "key": "XVXBZ-NDMC4-JOGUS-XGIEE-QVHDZ-AMFV2"
+        }
+      }
+    },
+    "optimization": {}
+  },
+
+  /* 微信小程序特有相关 */
+  // https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin
+  // https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+
+      "es6": false, // ES6 转 ES5
+      "postcss": false, // 上传代码时样式是否自动补全
+      "minified": false, // 上传代码时是否自动压缩
+      "checkSiteMap": false
+    },
+    "usingComponents": true, // 是否启用自定义组件模式
+    // 微信小程序接口权限相关设置
+    // https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#permission
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
+    }
+  },
+
+  "mp-alipay": {
+    "usingComponents": true
+  },
+  "mp-baidu": {
+    "usingComponents": true
+  },
+  "mp-toutiao": {
+    "usingComponents": true
+  },
+  "mp-qq": {
+    "usingComponents": true
+  }
 }

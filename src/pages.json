@@ -1,16 +1,65 @@
+/*
+ * 全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等
+ * 参考 https://uniapp.dcloud.io/collocation/pages
+ */
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "pages": [
+    // pages 数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages?id=pages
+    {
+      "path": "pages/index/index",
+      // 用于设置每个页面的状态栏、导航条、标题、窗口背景色等
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
+      "path": "pages/about/about",
+      // 用于设置每个页面的状态栏、导航条、标题、窗口背景色等
+      "style": {
+        "navigationBarTitleText": "about"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "position": "bottom", // 可选值 bottom(默认)、top，top 值仅微信小程序支持
+    "list": [
+      {
+        "pagePath": "pages/index/index", // 页面路径，必须在 pages 中先定义
+        "iconPath": "static/logo.png", // 当 postion 为 top 时，此参数无效，不支持网络图片，不支持字体图标
+        "selectedIconPath": "static/logo.png",
+        "text": "hello"
+      },
+      {
+        "pagePath": "pages/about/about", // 页面路径，必须在 pages 中先定义
+        "iconPath": "static/logo.png", // 当 postion 为 top 时，此参数无效，不支持网络图片，不支持字体图标
+        "selectedIconPath": "static/logo.png",
+        "text": "about"
+      }
+    ]
+  },
+
+  // 同 微信小程序中 app.json -> window
+  // https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/page.html
+  // https://uniapp.dcloud.io/collocation/pages?id=globalstyle
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#F8F8F8", // 导航栏背景色
+    "navigationBarTextStyle": "black", // 导航栏标题颜色 仅支持 black/white
+    "navigationBarTitleText": "uni-app", // 导航栏标题文字
+
+    // "navigationStyle": "", // 支持 default 默认 custom 隐藏导航栏，只保留胶囊按钮
+    "backgroundColor": "#F8F8F8", // 窗口背景色
+    "backgroundTextStyle": "dark", // 下拉 loading 的样式，仅支持 dark / light
+    // "backgroundColorTop": "#fff", // 顶部窗口的背景色，仅 iOS 支持
+    // "backgroundColorBottom": "#fff" // 底部窗口的背景色，仅 iOS 支持
+    "enablePullDownRefresh": true // 是否开启下拉刷新
+
+    // "usingComponents": {
+    //   // 引用小程序组件
+    //   "collapse-tree-item": "/components/collapse-tree-item"
+    // }
+  }
 }
